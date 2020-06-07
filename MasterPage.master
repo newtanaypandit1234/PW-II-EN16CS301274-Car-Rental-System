@@ -1,0 +1,290 @@
+﻿<%--<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>--%>
+
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Welcome to Car Rental System </title>
+     <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>.navbar {
+  overflow: hidden;
+  background-color: transparent;
+}
+
+/* Navigation links */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The subnavigation menu */
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: black;
+  padding: 20px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Add a background color to navigation links on hover */
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: slategray;
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  display: none;
+  position: center;
+  left: 0;
+  background-color: silver;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Style the subnav links */
+.subnav-content a {
+  float: inherit;
+  color: white;
+  text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+  background-color: transparent;
+  color: #353535;
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+  display: block;
+}</style>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/slider.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css'>
+<script src="js/jquery-1.7.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/tms-0.4.1.js"></script>
+<script>
+$(document).ready(function () {
+    $('.slider')._TMS({
+        show: 0,
+        pauseOnHover: true,
+        prevBu: '.prev',
+        nextBu: '.next',
+        playBu: false,
+        duration: 500,
+        preset: 'fade',
+        pagination: true, //'.pagination',true,'<ul></ul>'
+        pagNums: false,
+        slideshow: 8000,
+        numStatus: false,
+        banners: 'fromBottom', // fromLeft, fromRight, fromTop, fromBottom
+        waitBannerAnimation: false,
+        progressBar: false
+    })
+})
+$(function () {
+    if ($(window).width() <= 1066) {
+        $("#slider .prev").css("left", "55px")
+        $("#slider .next").css("right", "55px")
+    }
+})
+</script>
+<!--[if lt IE 9]>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/html5.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+<![endif]-->
+    <style type="text/css">
+        .auto-style1 {
+            width: 249px;
+            height: 96px;
+        }
+    </style>
+</head>
+<body>
+<div class="bg">
+  <header>
+    <div class="main wrap">
+      <h1><a href="Default.aspx"><img src="logo2.png" alt="" class="auto-style1"></a></h1>
+      
+    </div>
+    <nav>
+      <ul class="menu">
+        <li class="current"><a href="Default.aspx" class="home"><img src="images/home.jpg" alt=""></a></li>
+        <li><a href="Default.aspx">Home</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Car_rental">About</a></li>  
+        <li><a href="After_Search.aspx">Car Search</a></li>        
+          <li><div class="navbar">
+  <div class="subnav">
+    <button class="subnavbtn">Registration <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="Vender_Registration.aspx">Vender</a>
+      <a href="Customer_Registration.aspx">Customer</a>      
+    </div></li> 
+          <li><a href="https://www.systematixinfotech.com/contact/">Contact</a></li>
+          <li><div class="navbar">
+  <div class="subnav">
+    <button class="subnavbtn">Login<i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="Ven_Login.aspx">Vender Login</a>
+      <a href="Cus_Login.aspx">Customer Login</a>      
+    </div></li>
+                 
+          
+      </ul>
+      <div class="clear"></div>
+    </nav>
+  </header>
+  <div id="slider">
+    <div class="slider-block">
+      <div class="slider">
+        <ul class="items">
+          <li><img src="images/64d1c0a9282244cf57c4690b61bf0646.jpg"  alt="">
+            <div class="banner">
+              <div><span>Ford</span><strong>Сiriure dolor nhendrerit</strong>
+                
+                <a href="#" class="button">Read More</a></div>
+            </div>
+          </li>
+          <li><img src="images/rc_how-to-list-a-vehicle-for-sale-online.jpg" alt="">
+            <div class="banner">
+              <div><span>Maserati GT</span><strong>Vulputate velit esse</strong>
+                
+                <a href="#" class="button">Read More</a></div>
+            </div>
+          </li>
+          <li><img src="images/online-service_w268.jpg"  alt="">
+            <div class="banner">
+              <div><span>Honda HSC</span><strong>Molestie consequat vel</strong>
+               <a href="#" class="button">Read More</a></div>
+            </div>
+          </li>
+          <li><img src="images/slide-1.jpg" alt="">
+            <div class="banner">
+              <div><span>Ford</span><strong>Сiriure dolor nhendrerit</strong>
+                <p>Nam liber tempor cum soluta nobis eleifenoption congue nigfif аil imperdiet doming id quod mazim placerat facer. Lorjem ipsum dolor sit amet, consecer adipiscing elit.</p>
+                <a href="#" class="button">Read More</a></div>
+            </div>
+          </li>
+          <li><img src="images/slide-2.jpg" alt="">
+            <div class="banner">
+              <div><span>Ford</span><strong>Сiriure dolor nhendrerit</strong>
+                <p>Nam liber tempor cum soluta nobis eleifenoption congue nigfif аil imperdiet doming id quod mazim placerat facer. Lorjem ipsum dolor sit amet, consecer adipiscing elit.</p>
+                <a href="#" class="button">Read More</a></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <a href="#" class="prev"></a> <a href="#" class="next"></a> </div>
+  </div>
+  <section id="content">
+      <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            <p>
+                s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.5473805248366!2d75.88741121443717!3d22.745058732351527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd539a99e26d%3A0x58058ec7f07ab479!2sSystematix%20Infotech%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1590183843775!5m2!1sen!2sin" width="400" frameborder="0" style="border-style: none; border-color: inherit; border-width: 0; height: 267px;" allowfullscreen="" aria-hidden="false" tabindex="0" id="I1" name="I1"></iframe>
+            </p>
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+   <%-- <div class="block-1 box-1">
+      <div> <img src="images/page1-img1.jpg" alt="">
+        <p class="text-1">Schedule <strong>Services</strong></p>
+        <p class="upper"><a href="#" class="link">Click here</a> for more info about this free website templates  by TemplateMonster.com.</p>
+        <a href="#" class="button">Read More</a> </div>
+      <div> <img src="images/page1-img2.jpg" alt="">
+        <p class="text-1">Preventive <strong>Maintenance</strong></p>
+        <p class="upper">This website template is optimized for 1280X1024 screen res. It is also XHTML & CSS valid.</p>
+        <a href="#" class="button">Read More</a> </div>
+      <div> <img src="images/page1-img3.jpg" alt="">
+        <p class="text-1">Repair <strong>Services</strong></p>
+        <p class="upper">The PSD source files of this template are available for free for the registered members.</p>
+        <a href="#" class="button">Read More</a> </div>
+      <div class="last"> <img src="images/page1-img4.jpg" alt="">
+        <p class="text-1">Tire & Wheel <strong>Services</strong></p>
+        <p class="upper">Feel free to get this free web template created  by Template Monster Team!</p>
+        <a href="#" class="button">Read More</a> </div>
+    </div>
+    <div class="block-2 wrap pad-2">
+      <div class="box-2">
+        <h2 class="clr-1">Reviews</h2>
+        <div class="comments">
+          <div> “Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.”
+            <div class="comments-corner"></div>
+          </div>
+          <a href="#">dolor hendrerit</a> </div>
+        <div class="comments">
+          <div> “vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.”
+            <div class="comments-corner"></div>
+          </div>
+          <a href="#">vulputate velit</a> </div>
+      </div>
+      <div class="box-3">
+        <h2 class="clr-1">Our Services</h2>
+        <div class="wrap">
+          <ul class="list-1">
+            <li><a href="#">Consetetur sadipscing</a></li>
+            <li><a href="#">elitr sed diam nonumy</a></li>
+            <li><a href="#">tempor invidunt utabore</a></li>
+            <li><a href="#">et dolore magna aliquyam</a></li>
+            <li><a href="#">erat sed diam voluptua</a></li>
+            <li><a href="#">At vero eos et accusam et</a></li>
+          </ul>
+          <ul class="list-1 last">
+            <li><a href="#">Takimata sanctus est</a></li>
+            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+            <li><a href="#">Ipsum dolor sit amet</a></li>
+            <li><a href="#">consetetur sadipscing </a></li>
+            <li><a href="#">sed diam nonumy eirmod</a></li>
+            <li><a href="#">tempor invidunt ut labore</a></li>
+          </ul>
+        </div>
+        <a href="#" class="button-2">Read More</a> </div>
+    </div>--%>
+  </section>
+  <footer>Car Rental | <a href="#">Privacy Policy</a> | Design by: <a href="https://www.systematixinfotech.com/">Systematix Infotech/Tanay Pandit</a></footer>
+</div>
+</body>
+</html>
